@@ -259,11 +259,14 @@ flex-grow: 1;
     background-color: #FFFFFF; 
     border-radius: 0 0 4px 4px;
     width: 264px;
-    
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+        background: #fff;
+        
 }
 
 .team-card {
     padding: 32px 0 32px;
+       
 }
 
 .team-name {
@@ -277,6 +280,7 @@ flex-grow: 1;
 
 .team-desc {
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .name {
@@ -292,6 +296,43 @@ flex-grow: 1;
     line-height: 1.5;
     color: #434455;
     letter-spacing: 0.02em;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 16px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.icon-el,
+.icon-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-el {
+    fill: #4d5ae5;
+    width: 40px;
+    height: 40px;
+}
+
+.icon-img {
+    fill: #f4f4fd;;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
 }
 
 .portfolio {
@@ -358,3 +399,4 @@ flex-grow: 1;
     color: #f4f4fd;
     line-height: 1.17;
 }
+
