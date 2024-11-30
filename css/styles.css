@@ -81,6 +81,8 @@ flex-grow: 1;
     display: block;
     position: relative;
     transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -165,6 +167,8 @@ flex-grow: 1;
     height: 56px;
     margin: 0 auto;
     transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         
 }
 
@@ -263,7 +267,8 @@ flex-grow: 1;
         background: #fff;
       
 }
-.team-list:hover .icon-el{
+.team-list:hover .icon-el,
+.team-list:focus .icon-el {
     fill: #404bbf;
 }
 
@@ -330,6 +335,8 @@ flex-grow: 1;
     width: 40px;
     height: 40px;
     transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-team {
@@ -382,7 +389,9 @@ flex-grow: 1;
     width: 100%;
     height: 100%;
     transform: translateY(100%);
-    transition: transform 250ms ease-in-out;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .overlay p {
@@ -393,8 +402,15 @@ flex-grow: 1;
     color: #f4f4fd;
     margin: 40px 32px;
 }
-.port-box:hover .overlay {
+.port-box:hover .overlay,
+.port-box:focus .overlay {
     transform: translateY(0);
+}
+
+.port-box:hover,
+.port-box:focus {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+        background: #fff;
 }
 
 .port-card {
@@ -460,6 +476,7 @@ flex-grow: 1;
     margin-left: 0;
 }
 
-.footer-social-media li a:hover .icon-el {
+.footer-social-media li a:hover .icon-el,
+.footer-social-media li a:focus .icon-el {
     fill: #31d0aa;
 }
