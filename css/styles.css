@@ -36,6 +36,8 @@ flex-grow: 1;
 
 .header {
     border-bottom: 1px solid #e7e9fc;  
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+    background-color: #fff;
 }
 
 .header-cont {
@@ -91,12 +93,18 @@ flex-grow: 1;
     color: #404bbf;
 }
 
-.studio:active::after {
+.studio {
+    color: #404bbf;
+}
+
+.studio::after {
     content: "";
     border-radius: 2px;
-    width: 48px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
     height: 4px;
-    background: #404bbf;
+    background-color: #404bbf;
     display: block;
     margin-top: 20px;
     position: absolute;
@@ -118,6 +126,10 @@ flex-grow: 1;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .address-link:hover,
@@ -127,10 +139,12 @@ flex-grow: 1;
 
 .hero {
     background-color: #2e2f42;
-    background-image: linear-gradient(0deg, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
     background-size: cover;
-    width: 100%;
-    padding: 188px 0;     
+    max-width: 1440px;
+    padding: 188px 0;  
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hero-cont {
@@ -220,6 +234,8 @@ flex-grow: 1;
     justify-content: center;
     align-items: center;
     padding: 24px 100px;
+    height: 112px;
+    margin-bottom: 8px;
 }     
 
 .adv-img {
@@ -267,9 +283,9 @@ flex-grow: 1;
         background: #fff;
       
 }
-.team-list:hover .icon-el,
-.team-list:focus .icon-el {
-    fill: #404bbf;
+.team-list:hover .social-media-link-a,
+.team-list:focus .social-media-link-a {
+    background-color: #404bbf;
 }
 
 .team-card {
@@ -308,35 +324,36 @@ flex-grow: 1;
 
 .social-media {
     display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-left: 16px;
-}
-
-.icon {
-    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 24px;  
+}
+
+.social-media-link {
     width: 40px;
     height: 40px;
     position: relative;
 }
 
-.icon-el,
+.social-media-link-a {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .icon-team {
+    fill: #f4f4fd;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.icon-el {
-    fill: #4d5ae5;
-    width: 40px;
-    height: 40px;
-    transition-property: fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-team {
@@ -373,6 +390,7 @@ flex-grow: 1;
 .port-box {
     width: 360px;
     height: 420px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .port-box-img {
@@ -388,29 +406,28 @@ flex-grow: 1;
     left: 0;
     width: 100%;
     height: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
     transform: translateY(100%);
     transition-property: transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
-.overlay p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #f4f4fd;
-    margin: 40px 32px;
-}
+
 .port-box:hover .overlay,
 .port-box:focus .overlay {
-    transform: translateY(0);
+    transform: translateY(0%);
+    
 }
 
 .port-box:hover,
 .port-box:focus {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-        background: #fff;
 }
 
 .port-card {
@@ -433,7 +450,7 @@ flex-grow: 1;
 
 .footer-cont {
     display: flex;
-    gap: 120px;
+    align-items: baseline;
 }
 
 .footer-logo {
@@ -441,6 +458,9 @@ flex-grow: 1;
     margin-bottom: 16px;
 }
 
+.footer-logo-text {
+    margin-right: 120px
+}
 .footer-text {
     font-size: 16px;
     line-height: 1.5;
@@ -474,9 +494,10 @@ flex-grow: 1;
 
 .footer-social-media {
     margin-left: 0;
+    gap: 16px;
 }
 
-.footer-social-media li a:hover .icon-el,
-.footer-social-media li a:focus .icon-el {
-    fill: #31d0aa;
+.footer-link:hover,
+.footer-link:focus {
+    background-color: #31d0aa;
 }
