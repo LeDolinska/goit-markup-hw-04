@@ -145,6 +145,7 @@ flex-grow: 1;
     padding: 188px 0;  
     background-repeat: no-repeat;
     background-position: center;
+    margin: 0 auto;
 }
 
 .hero-cont {
@@ -285,6 +286,10 @@ flex-grow: 1;
 }
 .team-list:hover .social-media-link-a,
 .team-list:focus .social-media-link-a {
+    background-color: #404bbf;
+}
+
+..social-media-link-a:focus {
     background-color: #404bbf;
 }
 
